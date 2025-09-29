@@ -14,6 +14,9 @@ import { ClientesServicio } from '../clientes-servicio';
 //Interfaz
 import { Cliente } from '../cliente.model';
 
+//api
+import { ApiUsuarios } from '../api-usuarios';
+
 @Component({
   selector: 'app-crear-cliente',
   imports: [ ReactiveFormsModule, CommonModule],
@@ -25,8 +28,8 @@ export class CrearCliente implements OnInit {
 
   clientForm!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private clientesServicio : ClientesServicio
-  ){}
+  constructor(private formBuilder: FormBuilder, private clientesServicio : ClientesServicio,
+    apiUsuarios: ApiUsuarios){}
 
   ngOnInit() {
     this.clientForm = this.formBuilder.group({

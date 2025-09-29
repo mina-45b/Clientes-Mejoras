@@ -8,6 +8,9 @@ import { CommonModule } from '@angular/common';
 //Interfaz
 import { Cliente } from '../cliente.model';
 
+//api
+import { ApiUsuarios } from '../api-usuarios';
+
 @Component({
   selector: 'app-lista-de-clientes',
   imports: [ CommonModule],
@@ -18,7 +21,7 @@ export class ListaDeClientes implements OnInit{
 
   clientes: Cliente[]= []
 
-  constructor(private clientesServicio: ClientesServicio){}
+  constructor(private clientesServicio: ClientesServicio, private apiUsuarios: ApiUsuarios){}
 
   ngOnInit(): void {
 
