@@ -1,15 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 //Servicio
 import { ClientesServicio  } from '../clientes-servicio';
 
-import { CommonModule } from '@angular/common';
-
 //Interfaz
 import { Cliente } from '../cliente.model';
-
-//api
-import { ApiUsuarios } from '../api-usuarios';
 
 @Component({
   selector: 'app-lista-de-clientes',
@@ -21,19 +17,25 @@ export class ListaDeClientes implements OnInit{
 
   clientes: Cliente[]= []
 
-  constructor(private clientesServicio: ClientesServicio, private apiUsuarios: ApiUsuarios){}
+  constructor(private clientesServicio: ClientesServicio){}
 
-  ngOnInit(): void {
+  ngOnInit() {
 
-    this.clientesServicio.getCliente().subscribe(
-      data => {
-        this.clientes = data
+    //Carga los clientes de la api
+    this.clientesServicio.cargarclientes()
+
+    //Obtiene la lista de clientes y los almacena en su array local
+    this.clientesServicio.clientes$.subscribe(
+      lista => {
+        this.clientes = lista
         console.log(this.clientes)
       },
       error => {
         console.log('Hay un error con los clientes', error)
       }
     )
+
+  
     
   }
 

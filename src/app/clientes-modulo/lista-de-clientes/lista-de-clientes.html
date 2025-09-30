@@ -12,8 +12,14 @@
     <tbody>
         <tr *ngFor="let cliente of clientes">
             <td>#{{cliente.id}}</td>
-            <td>{{cliente.nombre}}</td>
-            <td>{{cliente.direccion}}</td>
+            <td>{{cliente.name.firstname}}
+                <span *ngIf="cliente.name.lastname">{{cliente.name.lastname}}</span>
+            </td>
+            <td>
+                <span *ngIf="cliente.address.city">{{cliente.address.city}},</span>
+                {{cliente.address.street}}
+                <span *ngIf="cliente.address.number && cliente.address.number !== 0"> - {{cliente.address.number}}</span>
+            </td>
             <td>{{cliente.email}}</td>
         </tr>
     </tbody>
