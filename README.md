@@ -3,6 +3,15 @@
 Este proyecto es una aplicación desarrollada en **Angular** para la gestión de clientes.
 En esta nueva versión, se ha implementado la integración con la API **[FakeStoreAPI Users](https://fakestoreapi.com/docs#tag/Users)**, lo que permite obtener clientes desde el inicio y simular la creación de nuevos usuarios a través de la API.
 
+
+
+![Formulario para crear Cliente](imagenes/crear-cliente-v2.png)
+**Figura 1: Formulario para la creación de clientes**
+
+![Lista de Clientes](imagenes/listar-cliente-v2.png)
+**Figura 2: Tabla con la lista de clientes creados**
+
+
 ---
 
 ## Características principales
