@@ -48,8 +48,10 @@ En esta nueva versión, se ha implementado la integración con la API **[FakeSto
   * `clientes-modulo/lista-de-clientes`: obtiene los clientes del `BehaviorSubject` como `Observable` y los muestra en una tabla.
   * `clientes/crear-cliente`: llama al servicio para agregar un nuevo cliente, formateando los datos según el modelo de la API.
 
-* **Diseño CSS**
-  Se han mantenido los estilos básicos en los componentes.
+* **Diseño y UX**
+
+* Se han mantenido los estilos básicos en los componentes con CSS.
+* Se ha añadido un SnackBar para notificar al usuario cuando un cliente ha sido creado correctamente.
 
 ---
 
